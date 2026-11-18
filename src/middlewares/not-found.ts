@@ -1,0 +1,10 @@
+import { RequestHandler } from "express";
+
+export const notFound: RequestHandler = (req, res) => {
+  return res.status(404).json({
+    error: {
+      code: "NOT_FOUND",
+      message: `Route ${req.method} ${req.path} not found`,
+    },
+  });
+};
